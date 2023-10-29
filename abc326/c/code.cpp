@@ -65,5 +65,5 @@ signed main()
       r++;
     res = max(res, r - l);
   }
-  cout << res;
+  cout << res << endl;
 }
