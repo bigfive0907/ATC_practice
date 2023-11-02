@@ -8,8 +8,27 @@ using P = pair<int, int>;
 #define all(x) (x).begin(), (x).end()
 #define than(a, x, b) (x) < (a) && (x) < (b)
 
+int another(int before, int after)
+{
+  cin >> after;
+  if (before != after)
+  {
+    cout << "No" << endl;
+    exit(0);
+  }
+}
+
 int main()
 {
+  int n, init, next;
+  cin >> n >> init;
 
+  while (1 < n)
+  {
+    another(init, next);
+    n--;
+  }
+
+  cout << "Yes" << endl;
   return 0;
 }

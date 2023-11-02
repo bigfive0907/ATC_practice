@@ -10,6 +10,34 @@ using P = pair<int, int>;
 
 int main()
 {
+  int n;
+  cin >> n;
 
+  if (n % 3 == 0 || n % 2 == 0)
+  {
+    cout << "Yes" << endl;
+    return 0;
+  }
+  int m = n;
+  while (m >= 2)
+  {
+    if (m / 2 == 0)
+    {
+      cout << "Yes" << endl;
+      return 0;
+    }
+    m /= 3;
+  }
+  while (n >= 3)
+  {
+
+    if (n / 3 == 0)
+    {
+      cout << "Yes" << endl;
+      return 0;
+    }
+    n /= 2;
+  }
+  cout << "No" << endl;
   return 0;
 }
