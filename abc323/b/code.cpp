@@ -10,6 +10,28 @@ using P = pair<int, int>;
 
 int main()
 {
+  int n;
+  cin >> n;
+  vector<string> v(n);
+  vector<int> l(n);
+  vector<P> out(n);
+  for (int i = 0; i < n; i++)
+  {
+    cin >> v.at(i);
+    l.at(i) = count(v[i].begin(), v[i].end(), "o");
+  }
+  for (int i = 0; i < n; i++)
+  {
+    auto itr = max_element(l.begin(), l.end());
+    int val = *max_element(l.begin(), l.end());
+    size_t index = distance(l.begin(), itr);
+    out.at(i) = make_pair(val, index);
+  }
 
+  sort(out.begin(), out.end());
+  for (int i = 0; i < n; i++)
+  {
+    cout << out[i].second << " ";
+  }
   return 0;
 }

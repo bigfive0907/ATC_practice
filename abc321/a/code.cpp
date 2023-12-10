@@ -10,16 +10,17 @@ using P = pair<int, int>;
 
 int main()
 {
-  string s;
-  cin >> s;
-  for (int i = 1; i < 17; i += 2)
-  {
-    if (s[i] == '1')
-    {
-      cout << "No" << endl;
-      exit(0);
-    }
+ string n;
+ cin >> n;
+ bool flag = true;
+
+ for(int i=0;i<n.size()-1;++i){
+  if(int(n[n.size()-i-1]) <= int(n[n.size()-i])){
+    flag = false;
   }
-  cout << "Yes" << endl;
+ }
+
+ cout << (flag ? "Yes":"No") << endl;
+
   return 0;
 }

@@ -10,16 +10,19 @@ using P = pair<int, int>;
 
 int main()
 {
-  string s;
-  cin >> s;
-  for (int i = 1; i < 17; i += 2)
-  {
-    if (s[i] == '1')
-    {
-      cout << "No" << endl;
-      exit(0);
+ int k,g,m;
+ cin >> k >> g >> m;
+ int G=0,M=0;
+ for (int i =0;i<k;i++){
+    if(G==g) G=0;
+    else if(M==0) M=m;
+    else {
+      while( M > 0 && G < g){
+        G++;
+        M--;
+      }
     }
-  }
-  cout << "Yes" << endl;
+ }
+ cout << G << " " << M << endl;
   return 0;
 }

@@ -10,16 +10,19 @@ using P = pair<int, int>;
 
 int main()
 {
-  string s;
-  cin >> s;
-  for (int i = 1; i < 17; i += 2)
-  {
-    if (s[i] == '1')
-    {
-      cout << "No" << endl;
-      exit(0);
-    }
+  int n,s,k,sum=0;
+  cin  >> n >> s >> k;
+  for(int i=0;i<n;i++){
+    int a;
+    cin >> a;
+    int b ;
+    cin >> b;
+    sum += a*b;
   }
-  cout << "Yes" << endl;
+
+  if(sum < s)
+    sum += k;
+  
+  cout << sum << endl;
   return 0;
 }

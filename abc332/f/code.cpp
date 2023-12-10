@@ -10,16 +10,6 @@ using P = pair<int, int>;
 
 int main()
 {
-  string s;
-  cin >> s;
-  for (int i = 1; i < 17; i += 2)
-  {
-    if (s[i] == '1')
-    {
-      cout << "No" << endl;
-      exit(0);
-    }
-  }
-  cout << "Yes" << endl;
+
   return 0;
 }

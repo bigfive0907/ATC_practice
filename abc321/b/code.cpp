@@ -10,16 +10,27 @@ using P = pair<int, int>;
 
 int main()
 {
-  string s;
-  cin >> s;
-  for (int i = 1; i < 17; i += 2)
-  {
-    if (s[i] == '1')
-    {
-      cout << "No" << endl;
+  int n,x;
+  cin >> n >> x;
+  vector<int> a(n-1);
+  for(int i=0;i<n;++i){
+    cin >> a[i];
+  }
+
+  for(int i=0;i<101;++i){
+    vector<int>b = a;
+    b.push_back(i);
+    sort(b.begin(),b.end());
+
+    int summation = accumulate(b.begin()+1,b.end()-1,0) ;
+    if(summation>=x){
+      cout << i << endl;
       exit(0);
     }
+
   }
-  cout << "Yes" << endl;
+  cout << -1 << endl;
+
+
   return 0;
 }
