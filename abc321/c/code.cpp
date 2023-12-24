@@ -10,6 +10,30 @@ using P = pair<int, int>;
 
 int main()
 {
+  int k;
+  cin >> k;
+  long long b=0;
+  string ans,out;
+
+  while(k>=0){
+    ans = to_string(b);
+    bool flag = true;
+
+    //judge whether 321 like number
+    for(int i=0;i<ans.size();++i){
+      if(int(ans[ans.size()-i]) >= ans[ans.size()-i-1]){
+        flag = false;
+        break;
+      }
+    }
+
+    if(flag == true){
+      out = ans;
+      k--;
+    }
+    b += 1;
+  }
+  cout << out << endl;
 
   return 0;
 }
