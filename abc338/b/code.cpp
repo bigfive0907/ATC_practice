@@ -12,6 +12,14 @@ using P = pair<int, int>;
 
 int main()
 {
-
+  string s;
+  vector<int> a(130,0);
+  cin >> s;
+  for(int i = 0; i<s.size();++i){
+    a[int(s[i])]++;
+  }
+  auto iter = max_element(a.begin(), a.end());
+      size_t index = distance(a.begin(), iter);
+  cout << char(index) << endl;
   return 0;
 }
